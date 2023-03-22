@@ -31,7 +31,9 @@
 }
 
 .digital-watch h1 {
-	font-family: "monoidTest Retina";
+	/* font-family: "monoidTest Retina"; */
+	font-family: "dseg7 classic";
+	/* font-family: "'Share Tech Mono', monospace"; */
 	font-size: 6rem;
 	color: #47acff;
 	text-shadow: 2px 2px 2px #000;
