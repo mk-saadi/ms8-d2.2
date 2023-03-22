@@ -5,6 +5,7 @@ function App() {
 	return (
 		<div className="App">
 			<Counter></Counter>
+			<ExternalUsers></ExternalUsers>
 		</div>
 	);
 }
@@ -49,7 +50,46 @@ function Counter() {
 				}${minutes}:${seconds < 10 ? "0" : ""}${seconds}:${
 					milliseconds < 10 ? "00" : milliseconds < 100 ? "0" : ""
 				}${milliseconds}`}</h1>
+				<br />
 			</div>
+		</div>
+	);
+}
+
+function ExternalUsers() {
+	const [users, setUsers] = useState([]);
+	useEffect(() => {
+		fetch("https://jsonplaceholder.typicode.com/users")
+			.then((res) => res.json())
+			.then((data) => setUsers(data));
+	}, []);
+	return (
+		<div>
+			<br />
+			<br />
+			<hr />
+			<h1 className="users">External Users</h1>
+			{/* <h3>{users.length}</h3> */}
+			..............................
+			<br />
+			<br />
+			{users.map((user) => (
+				<li>
+					<User
+						name={user.name}
+						email={user.email}
+					></User>
+				</li>
+			))}
+		</div>
+	);
+}
+
+function User(props) {
+	return (
+		<div className="users">
+			<h3>Name: {props.name}</h3>
+			<h4>Email: {props.email}</h4>
 		</div>
 	);
 }
@@ -78,8 +118,8 @@ function Counter() {
 // 	{ item: "Fans * 6", price: "৳ 13500" },
 // ];
 /* ------------------- "Product" must be in capital letter ------------------ */
-{
-	/* {products.map((product) => (
+
+/* {products.map((product) => (
 				<Product
 					name={product.item}
 					price={product.price}
@@ -94,5 +134,5 @@ function Counter() {
 				price="৳ 63000"
 			></Product> 
 		 */
-}
+
 export default App;

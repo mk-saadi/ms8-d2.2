@@ -23,6 +23,7 @@
 .digital-watch {
 	margin-top: 5%;
 	display: flex;
+	/* display: grid; */
 	justify-content: center;
 	align-items: center;
 	height: 50vh;
@@ -34,9 +35,22 @@
 	font-size: 6rem;
 	color: #47acff;
 	text-shadow: 2px 2px 2px #000;
+	user-select: none;
 }
 
 .watch::selection {
 	color: salmon;
 	background-color: white;
+}
+
+.users {
+	background-color: #565656;
+	padding: 8px;
+	margin: 5px 8%;
+	/* box-shadow: 10px 5px 10px 0px rgb(60, 60, 60) inset; */
+	box-shadow: 6px 6px 3px black;
+}
+.users:hover {
+	transform: scale(0.99);
+	box-shadow: 2px 2px black;
 }
